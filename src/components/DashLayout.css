@@ -1,0 +1,14 @@
+#application {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    min-height: 100vh;
+}
+
+#application.sidebarOpen {
+    grid-template-columns: 200px 1fr;
+    transition: grid-template-columns 0.1s ease-in;
+}
+
+.dash__container {
+    padding: 40px;
+}

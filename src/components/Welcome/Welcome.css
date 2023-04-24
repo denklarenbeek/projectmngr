@@ -1,0 +1,15 @@
+.button_create_project {
+    display: flex;
+    width: 300px;
+    padding: 20px 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 18px;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.button_create_project i {
+    margin-right: 20px;
+}

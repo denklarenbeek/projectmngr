@@ -1,0 +1,38 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+}
+
+.modal_container {
+    position: relative;
+    padding: 20px;
+    background: white;
+    width: 460px;
+}
+
+.form_header {
+    margin-bottom: 20px;
+}
+
+.modal .close_button {
+    position: absolute;
+    font-size: 16px;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.modal .close_button i {
+    color: rgb(138, 148, 166);
+    font-size: 20px
+}

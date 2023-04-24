@@ -1,38 +1,169 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
+
+:root {
+    --main-color: #253340;
+    --danger-color: #f27935;
+    --red-color: #d91e18;
+    --success-color: hsl(147, 61%, 38%);
+    --loading-color: #bfbfbf;
+    --cta-color: rgb(0, 177, 255);
+
+    --primary-bg-color: #f6e7ea;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: var(--main-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+.fa-spinner {
+    animation: rotation 1s linear infinite;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a {
+    text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+.page_title {
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+/* FORM STYLING */
+
+.col-2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-2 .form-group {
+    width: 45%;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group .error-message {
+    color: var(--red-color);
+    position: absolute;
+    font-size: 10px;
+    bottom: -16px;
+    left: 12px;
+}
+
+
+.form-group .tip,
+.checkbox.small {
+    font-size: 12px;
+    color: grey
+}
+
+.form-error {
+    color: var(--red-color);
+    font-size: 10px
+}
+
+input {
+    border: 1px solid grey;
+    padding: 12px 12px;
+    width: 100%;
+    background-color: hsl(0, 0%, 100%);
+    border-color: hsl(0, 0%, 80%);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    min-height: 38px;
+    font-size: 15px;
+    margin-top: 6px;
+}
+
+
+button[type=submit],
+.button {
+    background-color: var(--success-color);
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    padding: 2px 8px;
+    min-height: 38px;
+    font-size: 15px;
+}
+
+.button.danger {
+    background-color: var(--danger-color);
+}
+
+.button_create_entity {
+    background-color: var(--cta-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.button_create_entity.success {
+    background-color: var(--success-color);
+}
+
+.button_create_entity.outline {
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+}
+
+.button_create_entity.outline i,
+.button_create_entity.outline p {
+    color: var(--main-color )
+}
+
+.button_create_entity i,
+.button_create_entity p {
+    color: white;
+}
+
+.button_create_entity i {
+    margin-right: 8px;
+}
+
+button[type=submit]:hover {
+    background-color: hsl(147, 33%, 35%);;
+}
+
+button[type=submit].loading {
+    background-color: var(--loading-color);
+    cursor: not-allowed;
+}
+
+button[type=submit].loading:hover {
+    background-color: var(--loading-color);
+}
+
+.hoverable:hover {
+    box-shadow: -1px 3px 10px rgb(0 0 0 / 20%);
+    cursor: pointer;
 }

@@ -1,0 +1,51 @@
+.table__container {
+    width: 100%;
+}
+
+.table-bordered, .table-bordered th, .table-bordered td {
+    border: 1px solid #dee2e6
+}
+
+.logging__table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 16px;
+    width: 100%;
+}
+
+.logging__table thead {
+    text-align: left;
+    /* background-color: var(--primary-bg-color); */
+    color: var(--main-color);
+}
+
+.logging__table tr {
+    border-bottom: 1px solid var(--main-color);
+}
+
+.logging__table th,
+.logging__table td {
+    padding: 11px 12px;
+}
+
+.logging__table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.logging__table .table__actions_item {
+    font-size: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.logging__table .table__actions_item:last-of-type {
+    margin-right: 0;
+}
+
+.logging__table .table__actions_item.add_row {
+    font-size: 20px;
+    padding: 10px;
+    background-color: var(--success-color);
+    border-radius: 4px;
+    color: white;
+}
