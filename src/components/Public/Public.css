@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+.public-html {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 2.5em;
+}
+
+.public-body {
+    height: 100vh;
+    background-color: black;
+    color: whitesmoke;
+    display: grid;
+    place-content: center;
+    padding: 1rem;
+}
+
+.public-body h1,
+.button-container a {
+    color: whitesmoke
+}
+
+.button-container {
+    text-align: center;
+}
+
+.button-container a {
+    border: 1px solid whitesmoke;
+    padding: 10px 5px;
+    font-size: 24px;
+}
+
+.button-container a:hover {
+    background-color: whitesmoke;
+    color: black;
+    transition: all 0.4s ease-in;
+}
