@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 
 const Public = () => {
   return (
-    <h1>Public Page for people who have no login</h1>
+    <Fragment>
+        <h1>Public Page for people who have no login</h1>
+        <Link to='/login' />
+    </Fragment>
   )
 }
 
