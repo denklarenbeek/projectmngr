@@ -1,8 +1,10 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 import { setCredentials } from '../../features/auth/authSlice'
 
+const url = process.env.NODE_ENV === 'production' ? 'https://projectmngr-api.onrender.com' : 'http://localhost:3500'
+
 const baseQuery = fetchBaseQuery({
-    baseUrl: 'https://projectmngr-api.onrender.com',
+    baseUrl: url,
     credentials: 'include',
     prepareHeaders: (headers, { getState }) => {
         const token = getState().auth.token

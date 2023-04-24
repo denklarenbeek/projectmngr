@@ -12,3 +12,10 @@
 .dash__container {
     padding: 40px;
 }
+
+@media only screen and (max-width: 640px ) {
+    #application {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr
+    }
+}

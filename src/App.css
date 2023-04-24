@@ -9,6 +9,8 @@
     --cta-color: rgb(0, 177, 255);
 
     --primary-bg-color: #f6e7ea;
+
+    --breakpoint-small: 640px;
 }
 
 * {
@@ -166,4 +168,16 @@ button[type=submit].loading:hover {
 .hoverable:hover {
     box-shadow: -1px 3px 10px rgb(0 0 0 / 20%);
     cursor: pointer;
+}
+
+@media only screen and (max-width: 640px) { 
+
+    .page__header {
+        flex-wrap: wrap;
+    }
+
+    .page__header h1 {
+        width: 100%;
+    }
+
 }
