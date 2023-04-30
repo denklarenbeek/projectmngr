@@ -25,7 +25,7 @@ const ProjectItem = ({project}) => {
     return (
         <tr onClick={() => navigate(`/dashboard/projects/${project.id}`)}>
             <td>{project.title}</td>
-            <td>€  {formatCurrency(project.value)}</td>
+            <td>{`€ ${formatCurrency(project.value, 0)}`}</td>
             <td className='table__column_initial' >
                 {initials.map(initial => (
                     <div key={initial.initials} className="initial_container">

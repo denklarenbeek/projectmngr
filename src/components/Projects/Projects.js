@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
 import ProjectForm from '../../features/projects/ProjectForm'
 import Modal from '../../features/modal/Modal'
 import { formatCurrency } from '../../helpers/formatting'
@@ -8,6 +9,7 @@ import { selectAllProjects } from '../../features/projects/projectsApiSlice'
 const Projects = () => {
     const projects = useSelector(selectAllProjects);
     const [modal, setModal] = useState(false)
+    const navigate = useNavigate();
 
     const handleClose = () => {
         setModal(false)
@@ -43,7 +45,7 @@ const Projects = () => {
                         <tbody>
                             {projects?.map(item => {
                                 return (
-                                    <tr key={item._id}> 
+                                    <tr key={item._id} onClick={() => navigate(`/dashboard/projects/${item._id}`)} > 
                                         <td>{item.title}</td>
                                         <td>€ {formatCurrency(item.value, 0)}</td>
                                         <td>{item.totals.totalHours}</td>

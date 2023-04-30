@@ -14,6 +14,10 @@
     padding: 1rem;
 }
 
+.public-body h1 {
+    text-align: center;
+}
+
 .public-body h1,
 .button-container a {
     color: whitesmoke

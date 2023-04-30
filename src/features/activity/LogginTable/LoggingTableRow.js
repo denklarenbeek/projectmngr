@@ -16,7 +16,7 @@ const LoggingTableRow = ({item, projectIsCompleted}) => {
         <td>{item.quantity}</td>
         <td>{new Date(item.start_date).toLocaleDateString('nl-NL')}</td>
         <td>{new Date(item.end_date).toLocaleDateString('nl-NL')}</td>
-        <td>
+        <td style={{textAlign: 'center'}}>
             {!projectIsCompleted && <i className="fa-regular fa-trash-can table__actions_item" onClick={() => deleteActivityFromTable(item._id)}></i> }
         </td>
     </tr>

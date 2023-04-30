@@ -1,3 +1,7 @@
+.button_group {
+    margin-top: 20px;
+}
+
 .project__body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -70,9 +74,22 @@
 @media only screen and (max-width: 860px) {
     
     .project__body {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-row-gap: 20px;
+    }
+
+    .project__body__category {
+        max-width: 300px;
+    }
+
+    .information__group_result {
+        flex-wrap: wrap;
+    }
+
+    .information__group_result p {
+        margin: 0;
+        width: 100%;
     }
 
   }

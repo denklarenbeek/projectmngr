@@ -106,3 +106,18 @@
 .table__container_body tbody .tooltip.active {
     display: inline-block;
 }
+
+@media only screen and (max-width: 640px ) {
+    .project_list_container {
+        font-size: 0.8em;
+    }
+
+    .table__container_body th:nth-of-type(2) {
+        width: 20%;
+    }
+
+    .table__container_body td,
+    .table__container_body th {
+        padding: 10px;
+    }
+}

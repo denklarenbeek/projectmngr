@@ -84,7 +84,7 @@ const LoggingTable = ({activities, title, projectIsCompleted}) => {
                 <tr>
                     <th style={{width: '22%'}} >Name <i className="fa-solid fa-sort" id='name' onClick={sortTable}></i> </th>
                     <th style={{width: '22%'}} >Type <i className="fa-solid fa-sort" id='category' onClick={sortTable}></i></th>
-                    <th style={{width: '11%'}} >Quantity <i className="fa-solid fa-sort" id='quantity' onClick={sortTable}></i></th>
+                    <th style={{width: '11%'}} >QTY <i className="fa-solid fa-sort" id='quantity' onClick={sortTable}></i></th>
                     <th>Start Date <i className="fa-solid fa-sort" id='start_date' onClick={sortTable}></i></th>
                     <th>End Date <i className="fa-solid fa-sort" id='end_date' onClick={sortTable}></i></th>
                     {!projectIsCompleted && <th>Actions</th>}

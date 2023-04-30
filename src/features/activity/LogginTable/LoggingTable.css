@@ -2,6 +2,15 @@
     width: 100%;
 }
 
+.table__container .page__header {
+    flex-wrap: wrap;
+}
+
+.table__container h3 {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
 .table-bordered, .table-bordered th, .table-bordered td {
     border: 1px solid #dee2e6
 }
@@ -21,6 +30,7 @@
 
 .logging__table tr {
     border-bottom: 1px solid var(--main-color);
+    cursor: pointer;
 }
 
 .logging__table th,
@@ -49,3 +59,25 @@
     border-radius: 4px;
     color: white;
 }
+
+@media only screen and (max-width: 640px ) {
+    .logging__table {
+        font-size: 0.8em;
+    }
+    .logging__table th:nth-of-type(3),
+    .logging__table th:nth-of-type(4),
+    .logging__table th:nth-of-type(5),
+    .logging__table th:nth-of-type(6), 
+    .logging__table th:nth-of-type(9)   {
+        display: none;
+    }
+
+    .logging__table td:nth-of-type(3),
+    .logging__table td:nth-of-type(4),
+    .logging__table td:nth-of-type(5),
+    .logging__table td:nth-of-type(6),
+    .logging__table td:nth-of-type(9)    {
+        display: none;
+    }
+
+ }
