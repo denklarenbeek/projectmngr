@@ -12,6 +12,7 @@ import usePersist from "../../../hooks/usePersist"
 
 import './Login.css'
 import ChangePassword from "../../users/ChangePassword"
+import Spinner from "../../../helpers/spinner"
 
 const Login = () => {
   const userRef = useRef()
@@ -64,7 +65,7 @@ const Login = () => {
     }
   }
 
-  if (isLoading) return <p>Loaading....</p>
+  if (isLoading) return <Spinner />
 
 
   const content = (
