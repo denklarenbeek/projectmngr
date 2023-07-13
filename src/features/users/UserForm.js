@@ -47,6 +47,11 @@ const UserForm = () => {
     
     const handleSubmit = async (e) => {
         e.preventDefault()
+        // const inputs = {
+        //     id,
+        //     email,
+        //     file: selectFile.currentFile
+        // }
         const inputs = new FormData();
         if(selectFile.currentFile){
             inputs.append('image', selectFile.currentFile)
@@ -54,9 +59,10 @@ const UserForm = () => {
         inputs.append('id', id)
         inputs.append('email', email)
         try {
-            await updateUserProfile({data: inputs})
-            sendLogout()
-            navigate('/login')
+            inputs.get('image')
+            await updateUserProfile({inputs})
+            // sendLogout()
+            // navigate('/login')
         } catch (error) {
             console.log(error)
         }

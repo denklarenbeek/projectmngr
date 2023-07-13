@@ -29,51 +29,51 @@ function App() {
         <Route index element={<Public />} /> 
         <Route path='login' element={<Login />} />
         <Route path='resetpassword'>
-          <Route path=':token' element={<ResetpasswordPage />} />
+            <Route path=':token' element={<ResetpasswordPage />} />
         </Route>
         <Route path='activateuser'>
-          <Route path=':token' element={<ActivateUser />} />
+            <Route path=':token' element={<ActivateUser />} />
         </Route>
 
         {/* PROTECTED ROUTES */}
         <Route element={<PersistLogin />}>
         <Route element={<RequireAuth allowedRoles={[...Object.values(ROLES)]} />}>
-          <Route element={<Prefetch />}>
+            <Route element={<Prefetch />}>
             <Route path='dashboard' element={<DashLayout />}> {/* START OF DASHBOARD ROUTE*/}
 
-              <Route index element={<Welcome />} />
+            <Route index element={<Welcome />} />
               
-              <Route path='projects'>
+            <Route path='projects'>
                 <Route index element={<Projects />} />
                 <Route path='new' element={<ProjectForm />} />
                 <Route path=':id' element={<Project />} />
-              </Route>
+            </Route>
 
-              <Route element={<RequireAuth allowedRoles={[ROLES.Manager, ROLES.Administrator, ROLES.SuperUser]} />}>
+            <Route element={<RequireAuth allowedRoles={[ROLES.Manager, ROLES.Administrator, ROLES.SuperUser]} />}>
                 <Route path='users'>
-                  <Route index element={<Users />} />
+                    <Route index element={<Users />} />
                 </Route>
-              </Route>
+            </Route>
 
-              <Route path='profile'>
+            <Route path='profile'>
                 <Route index element={<Profile />} />
-              </Route>
+            </Route>
 
-              <Route path='schedule'>
+            <Route path='schedule'>
                 <Route index element={<Schedule />} />
-              </Route>
+            </Route>
 
-              <Route path='activity'>
+            <Route path='activity'>
                 <Route index element={<Activity />} />
-              </Route>
+            </Route>
 
-              </Route>{/*END OF DASHBOARD ROUTE */}
+            </Route>{/*END OF DASHBOARD ROUTE */}
 
 
             </Route>
           </Route>
-        </Route> {/* END OF PROTECTED ROUTE */}
-      </Route>
+            </Route> {/* END OF PROTECTED ROUTE */}
+        </Route>
     </Routes>
   );
 }

@@ -1,5 +1,6 @@
 import { createSelector, createEntityAdapter } from "@reduxjs/toolkit";
 import { apiSlice } from "../../app/api/apiSlice";
+import {selectCurrentToken} from '../auth/authSlice';
 import axios from 'axios'
 
 const usersAdapter = createEntityAdapter({});
@@ -63,15 +64,28 @@ export const usersApiSlice = apiSlice.injectEndpoints({
             ]
         }),
         updateUserProfile: builder.mutation({
-                queryFn: async ({data}) => {
-                    try {
-                        const result = await axios.patch('http://localhost:3500/users', data) // Used Axios for the content-type: multipart/form-data header
-                        return result
-                    } catch (error) {
-                        console.log(error)
-                    }
-                }
+            query: ({data}) => ({
+                url: '/users',
+                method: 'PATCH',
+                credentials: 'include',
+                body: data
+            }),
+            invalidatesTags: [
+                { type: 'User', id: 'LIST' }
+            ]
         }),
+        // updateUserProfile: builder.mutation({
+        //         queryFn: async ({data}) => {
+        //             try {
+        //                 const token =  selectCurrentToken();
+        //                 console.log(token);
+        //                 const result = await axios.patch('http://localhost:3500/users', data, {    headers: {authorization: `Bearer ${token}`}} ) // Used Axios for the content-type: multipart/form-data header
+        //                 return result
+        //             } catch (error) {
+        //                 console.log(error)
+        //             }
+        //         }
+        // }),
         changeUserRole: builder.mutation({
             query: initialUserData => ({
                 url: '/users/role',
